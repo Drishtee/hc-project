@@ -1,0 +1,169 @@
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+
+  .page-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .page-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  .profile-section,
+  .skills-section {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 24px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-section h1,
+  .skills-section h2 {
+    margin-bottom: 20px;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .user-detail-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  
+  .user-details p {
+    margin: 10px 0;
+    width: 45%;
+    text-align: left;
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  .add-skill {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+  }
+  
+  .add-skill select,
+  .add-skill input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    flex: 1;
+    height: 46px;
+    box-sizing: border-box;
+    margin-right: 10px;
+  }
+  
+ 
+
+  .remove-button{
+    background:none;
+    margin:8px;
+    font-weight:400;
+    border:none;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    
+    width: 100%;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 18px;
+    margin: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+  }
+  
+  .skills-required {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .skill-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  
+  .add-skill {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .add-skill input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  
+  .add-skill .btn-custom {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 8px 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-skill .btn-custom:hover {
+    background-color: #ff6347;
+    scale:1.05;
+  }

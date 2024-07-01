@@ -1,0 +1,145 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: none;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #3e5151 0%, #decba4 100%);
+}
+
+.community-container {
+  width: 100%;
+  padding: 20px;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: calc(100vh - 120px);
+  box-sizing: border-box;
+  background: none;
+  transition: filter 0.3s;
+}
+
+.community-container.blur {
+  filter: blur(5px);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  margin: 0;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.card p strong {
+  color: #333;
+}
+
+.request-card, .invite-card {
+  background: none;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.request-card p, .invite-card p {
+  margin: 5px 0;
+}
+
+.request-card button, .invite-card button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #decba4;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.request-card button:hover, .invite-card button:hover {
+  background-color: #b5a06a;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 800px;
+  margin: 0 auto;
+  animation: slideDown 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.modal-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  color: #333;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.participant-card {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
+}

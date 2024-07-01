@@ -1,0 +1,77 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id               Int               @id @default(autoincrement())
+  name             String
+  email            String?
+  phoneNumber      String            @unique
+  isWhatsApp       Boolean           @default(false)
+  newsletter       Boolean           @default(false)
+  occupation       String?
+  dateOfBirth      DateTime
+  pincode          String
+  state            String
+  city             String
+  haves            Have[]
+  wishes           Wish[]
+  requests         Request[]         @relation("userRequests")
+  wishParticipants WishParticipant[]
+  sentInvites      Invite[]          @relation("sentInvites")
+  receivedInvites  Invite[]          @relation("receivedInvites")
+}
+
+model Have {
+  id          Int    @id @default(autoincrement())
+  category    String
+  description String
+  userId      Int
+  user        User   @relation(fields: [userId], references: [id])
+}
+
+model Wish {
+  id           Int               @id @default(autoincrement())
+  category     String
+  description  String
+  skills       String[]
+  userId       Int
+  user         User              @relation(fields: [userId], references: [id])
+  requests     Request[]         @relation("wishRequests")
+  participants WishParticipant[]
+  invites      Invite[]
+}
+
+model Request {
+  id         Int      @id @default(autoincrement())
+  wishId     Int
+  userId     Int
+  wish       Wish     @relation("wishRequests", fields: [wishId], references: [id], onDelete: Cascade)
+  user       User     @relation("userRequests", fields: [userId], references: [id], onDelete: Cascade)
+  status     String   @default("pending") // pending, accepted, rejected
+  createdAt  DateTime @default(now())
+}
+
+model WishParticipant {
+  id     Int  @id @default(autoincrement())
+  wishId Int
+  userId Int
+  wish   Wish @relation(fields: [wishId], references: [id])
+  user   User @relation(fields: [userId], references: [id])
+}
+
+model Invite {
+  id       Int    @id @default(autoincrement())
+  wishId   Int
+  userId   Int
+  senderId Int
+  status   String @default("pending")
+  wish     Wish   @relation(fields: [wishId], references: [id])
+  user     User   @relation("receivedInvites", fields: [userId], references: [id])
+  sender   User   @relation("sentInvites", fields: [senderId], references: [id])
+}
